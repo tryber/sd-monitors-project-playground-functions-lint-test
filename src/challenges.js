@@ -3,7 +3,7 @@ function compareTrue(firstBoolean, secondBoolean) {
   if (firstBoolean && secondBoolean) {
     return true;
   }
-    return false;
+  return false;
 }
 
 // Desafio 2
@@ -20,12 +20,12 @@ function splitSentence(string) {
 
 // Desafio 4
 function concatName(array) {
-  return array[array.length - 1] + ', ' + array[0]
+  return array[array.length - 1] + ', ' + array[0];
 }
 
 // Desafio 5
 function footballPoints(wins, ties) {
-  let points = (wins * 3) + ties;
+  let points = wins * 3 + ties;
   return points;
 }
 
@@ -34,15 +34,15 @@ function highestCount(array) {
   let max = 0;
   let contador = 0;
   for (let index = 0; index < array.length; index += 1) {
-    if(max < array[index]){
+    if (max < array[index]) {
       max = array[index];
       contador = 1;
-    }else if(array[index] === max) {
-      contador += 1
+    } else if (array[index] === max) {
+      contador += 1;
     }
   }
 
-return contador
+  return contador;
 }
 // Desafio 7
 function catAndMouse(mouse, cat1, cat2) {
@@ -51,80 +51,82 @@ function catAndMouse(mouse, cat1, cat2) {
 
   if (distanceCat1 < 0) {
     distanceCat1 *= -1;
-  }else if (distanceCat2 < 0) {
+  } else if (distanceCat2 < 0) {
     distanceCat2 *= -1;
   }
-  if(distanceCat1 < distanceCat2){
+  if (distanceCat1 < distanceCat2) {
     return 'cat1';
-
-  }else if(distanceCat1 > distanceCat2){
+  } else if (distanceCat1 > distanceCat2) {
     return 'cat2';
-
-  }else if(distanceCat1 === distanceCat2){
-    return 'os gatos trombam e o rato foge'
+  } else if (distanceCat1 === distanceCat2) {
+    return 'os gatos trombam e o rato foge';
   }
 }
 // Desafio 8
 function fizzBuzz(array) {
   let fizzBuzzArray = [];
-  for(index = 0; index < array.length; index += 1){
-    if(array[index] %15 === 0){
-      fizzBuzzArray.push('fizzbuzz')
-
-    }else if(array[index] %5 === 0){
+  for (index = 0; index < array.length; index += 1) {
+    if (array[index] % 15 === 0) {
+      fizzBuzzArray.push('fizzbuzz');
+    } else if (array[index] % 5 === 0) {
       fizzBuzzArray.push('buzz');
-
-    }else if(array[index] %3 === 0){
+    } else if (array[index] % 3 === 0) {
       fizzBuzzArray.push('fizz');
-
-    }else {
-      fizzBuzzArray.push('bug!')
+    } else {
+      fizzBuzzArray.push('bug!');
     }
   }
-  return fizzBuzzArray
-  }
-
+  return fizzBuzzArray;
+}
 
 // Desafio 9
-function encode(string){
-  let arrayCode = string.split('')
-  for(index = 0; index < arrayCode.length; index += 1){
-    if(arrayCode[index] === 'a'){
+function encode(string) {
+  let arrayCode = string.split('');
+  for (index = 0; index < arrayCode.length; index += 1) {
+    if (arrayCode[index] === 'a') {
       arrayCode.splice(index, 1, '1');
-    }if(arrayCode[index] === 'e'){
+    }
+    if (arrayCode[index] === 'e') {
       arrayCode.splice(index, 1, '2');
-    }if(arrayCode[index] === 'i'){
+    }
+    if (arrayCode[index] === 'i') {
       arrayCode.splice(index, 1, '3');
-    }if(arrayCode[index] === 'o'){
+    }
+    if (arrayCode[index] === 'o') {
       arrayCode.splice(index, 1, '4');
-    }if(arrayCode[index] === 'u'){
+    }
+    if (arrayCode[index] === 'u') {
       arrayCode.splice(index, 1, '5');
     }
   }
 
   let codedTxt = arrayCode.join('');
-  return codedTxt
+  return codedTxt;
+}
+
+function decode(string) {
+  let arrayUnCode = string.split('');
+  for (index = 0; index < arrayUnCode.length; index += 1) {
+    if (arrayUnCode[index] === '1') {
+      arrayUnCode.splice(index, 1, 'a');
+    }
+    if (arrayUnCode[index] === '2') {
+      arrayUnCode.splice(index, 1, 'e');
+    }
+    if (arrayUnCode[index] === '3') {
+      arrayUnCode.splice(index, 1, 'i');
+    }
+    if (arrayUnCode[index] === '4') {
+      arrayUnCode.splice(index, 1, 'o');
+    }
+    if (arrayUnCode[index] === '5') {
+      arrayUnCode.splice(index, 1, 'u');
+    }
   }
 
-  function decode(string){
-    let arrayUnCode = string.split('')
-    for(index = 0; index < arrayUnCode.length; index += 1){
-      if(arrayUnCode[index] === '1'){
-        arrayUnCode.splice(index, 1, 'a');
-      }if(arrayUnCode[index] === '2'){
-        arrayUnCode.splice(index, 1, 'e');
-      }if(arrayUnCode[index] === '3'){
-        arrayUnCode.splice(index, 1, 'i');
-      }if(arrayUnCode[index] === '4'){
-        arrayUnCode.splice(index, 1, 'o');
-      }if(arrayUnCode[index] === '5'){
-        arrayUnCode.splice(index, 1, 'u');
-      }
-    }
-
-    let codedTxt = arrayUnCode.join('');
-    return codedTxt
-    }
+  let codedTxt = arrayUnCode.join('');
+  return codedTxt;
+}
 
 // Desafio 10
 function techList() {
@@ -146,7 +148,6 @@ function hydrate() {
   // seu código aqui
 }
 
-
 module.exports = {
   calcArea,
   catAndMouse,
@@ -162,4 +163,4 @@ module.exports = {
   hydrate,
   splitSentence,
   triangleCheck,
-}
+};
